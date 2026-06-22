@@ -26,6 +26,10 @@ import nexo4 from '@/assets/NexoPos/nexo_4.png'
 import nexo5 from '@/assets/NexoPos/nexo_5.png'
 import nexo6 from '@/assets/NexoPos/nexo_6.png'
 import nexo7 from '@/assets/NexoPos/nexo_7.png'
+import tesis1 from '@/assets/Tesis/Captura de pantalla 2026-06-22 171030.png'
+import tesis2 from '@/assets/Tesis/Captura de pantalla 2026-06-22 171053.png'
+import tesis3 from '@/assets/Tesis/Captura de pantalla 2026-06-22 171116.png'
+import tesis4 from '@/assets/Tesis/Captura de pantalla 2026-06-22 171144.png'
 
 export const projects = [
   {
@@ -39,7 +43,9 @@ export const projects = [
       { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
     ],
     type: 'Tesis Profesional',
-    github: 'https://github.com/norvisyunior',
+    image: tesis1,
+    gallery: [tesis1, tesis2, tesis3, tesis4],
+    note: 'Código propiedad del Banco Popular de Ahorro. Por políticas de confidencialidad, solo se muestran capturas con fines de portafolio.',
     demo: null,
     featured: true,
     gradient: 'from-emerald-500/20 via-teal-500/10 to-cyan-500/20',

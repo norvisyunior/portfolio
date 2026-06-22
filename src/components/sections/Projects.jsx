@@ -131,6 +131,11 @@ const Projects = () => {
                             <FiGithub size={14} /> Código
                           </a>
                         )}
+                        {project.note && (
+                          <span className="text-[11px] text-text-muted/60 italic leading-relaxed">
+                            {project.note}
+                          </span>
+                        )}
                         {project.demo && project.demo !== '#' && (
                           <a href={project.demo} target="_blank" rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-[12px] font-semibold text-white transition-all duration-300 active:scale-95"
