@@ -83,7 +83,7 @@ Complete point-of-sale and inventory system with sales, products, inventory, and
 |--------|------|
 | ✉️ Email | [norviscabrera7@gmail.com](mailto:norviscabrera7@gmail.com) |
 | 🐙 GitHub | [github.com/norvisyunior](https://github.com/norvisyunior) |
-| 🌐 Portfolio | [norvisyunior.vercel.app](https://norvisyunior.vercel.app) |
+| 🌐 Portfolio | [norvisportfolio.onrender.com](https://norvisportfolio.onrender.com) |
 
 ---
 
