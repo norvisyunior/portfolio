@@ -2,7 +2,7 @@ export const experience = [
   {
     id: 1,
     title: 'Sistema de Gestión de Recursos Energéticos',
-    role: 'Desarrollador Backend',
+    role: 'Desarrollador FullStack',
     company: 'Banco Popular de Ahorro',
     location: 'Matanzas, Cuba',
     period: 'Sep 6 - Dic 27, 2024',
