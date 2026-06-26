@@ -68,7 +68,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="/CV_NorvisYunior.docx"
+              href="/CV_NorvisYunior.pdf"
               download
               className="ml-2 flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-gradient-to-r from-primary to-accent text-white text-sm font-bold hover:shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300"
             >
@@ -105,7 +105,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="/CV_NorvisYunior.docx"
+              href="/CV_NorvisYunior.pdf"
               download
               className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-gradient-to-r from-primary to-accent text-white text-sm font-bold mt-3 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
             >

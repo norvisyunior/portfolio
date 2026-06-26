@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { FiSend, FiMail, FiPhone, FiMapPin, FiCheckCircle, FiGithub, FiArrowUpRight } from 'react-icons/fi'
+import { FiSend, FiMail, FiPhone, FiMapPin, FiCheckCircle, FiAlertCircle, FiGithub, FiArrowUpRight, FiLoader } from 'react-icons/fi'
+import emailjs from '@emailjs/browser'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { personalInfo } from '@/data/personal'
 
@@ -10,18 +11,38 @@ const Contact = () => {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Portfolio - ${formData.name}`)
-    const body = encodeURIComponent(`Nombre: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}&su=${subject}&body=${body}`, '_blank')
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 4000)
+    setSending(true)
+    setError(null)
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: personalInfo.email,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      setSubmitted(true)
+      setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setSubmitted(false), 4000)
+    } catch (err) {
+      setError('No se pudo enviar el mensaje. Intenta de nuevo.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -158,22 +179,34 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full justify-center">
-                  {submitted ? (
+                <button type="submit" disabled={sending} className="btn-primary w-full justify-center">
+                  {sending ? (
+                    <>
+                      <FiLoader size={17} className="animate-spin" />
+                      Enviando...
+                    </>
+                  ) : submitted ? (
                     <>
                       <FiCheckCircle size={17} />
-                      ¡Mensaje listo!
+                      ¡Mensaje enviado!
                     </>
                   ) : (
                     <>
                       <FiSend size={17} />
-                      Abrir Gmail y Enviar
+                      Enviar mensaje
                     </>
                   )}
                 </button>
 
+                {error && (
+                  <div className="flex items-center gap-2 text-red-400 text-xs justify-center">
+                    <FiAlertCircle size={14} />
+                    {error}
+                  </div>
+                )}
+
                 <p className="text-text-muted/40 text-xs text-center">
-                  Se abrirá Gmail con el mensaje prellenado
+                  Te responderé a la brevedad
                 </p>
               </form>
             </div>

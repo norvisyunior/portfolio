@@ -41,7 +41,7 @@ const About = () => {
                 <p className="text-text-muted text-sm leading-relaxed mb-6">{personalInfo.bio}</p>
 
                 <a
-                  href="/CV_NorvisYunior.docx"
+                  href="/CV_NorvisYunior.pdf"
                   download
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/10 text-primary text-sm font-semibold hover:bg-primary/20 transition-all duration-300 border border-primary/20"
                 >

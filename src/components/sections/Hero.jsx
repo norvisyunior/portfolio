@@ -140,7 +140,7 @@ const Hero = () => {
             {[
               { icon: FiGithub, href: personalInfo.github, label: 'GitHub' },
               { icon: FiMail, href: `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`, label: 'Email' },
-              { icon: FiDownload, href: '/CV_NorvisYunior.docx', label: 'CV', download: true },
+              { icon: FiDownload, href: '/CV_NorvisYunior.pdf', label: 'CV', download: true },
             ].map((s) => (
               <a
                 key={s.label}
